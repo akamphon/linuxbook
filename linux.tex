@@ -27,7 +27,6 @@
 \sboxsep=1pt
 \sdim=0.5pt
 \usepackage[
-        dvips,
         pdfauthor={Poonlap Veerathanabutr},
         pdftitle={Linux for everyone},
         pdfkeywords={Linux,Thai}
@@ -48,6 +47,8 @@
 \usepackage{booktabs}
 \usepackage{boxedminipage}
 \usepackage{psboxit}% for shaded box (line)
+
+\PrerenderUnicode{ก}
 
 \def\nomname{รวมคำศัพท์คอมพิวเตอร์}
 
@@ -80,10 +81,6 @@
 %\makeindex{filei}
 
 
-\hyphenation{
-โปร-แกรม
-ประ-สิทธิ-ภาพ
-}
 \setlength{\columnseprule}{0.4pt}
 \graphicspath{{eps/}}
 \begin{document}
@@ -134,7 +131,7 @@
 \printindex{command}{ดรรชนีคำสั่ง, โปรแกรม}
 %\printindex{filei}{ดรรชนีไฟล์}
 \addcontentsline{toc}{chapter}{รวมคำศัพท์คอมพิวเตอร์}
-\printglossary
+%%BROKEN%%\printglossary
 % for index package
 %\printindex[com]
 %\printindex

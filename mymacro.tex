@@ -326,7 +326,7 @@
 
 \makeatother
 
-\def\thtt#1{{\fontencoding{LTH}\fontfamily{pmono}\selectfont #1}}
+\def\thtt#1{{\fontencoding{LTH}\fontfamily{ttypist}\selectfont #1}}
 
 \def\cindex#1{\index{command}{#1@{\latintext\texttt{#1}}}}
 \def\findex#1{\index{command}{#1@{\latintext\texttt{#1}} (ไฟล์)}}
@@ -376,7 +376,7 @@
 
 
 % key pad figure
-\newcommand{\keydel}{\raisebox{-4pt}{\scalebox{.25}{\includegraphics{key_del.eps}}}}
-\newcommand{\keyctrl}{\raisebox{-4pt}{\scalebox{.25}{\includegraphics{key_ctrl.eps}}}}
-\newcommand{\keyc}{\raisebox{-4pt}{\scalebox{.25}{\includegraphics{key_c.eps}}}}
+\newcommand{\keydel}{\cmd{\ovalbox{Del}}}
+\newcommand{\keyctrl}{\cmd{\ovalbox{Ctrl}}}
+\newcommand{\keyc}{\cmd{\ovalbox{C}}}
 \newcommand{\abb}{--- \thtt{แสดงผลต่อไปเรื่อยๆ} ---}

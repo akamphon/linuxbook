@@ -320,13 +320,13 @@ $ \cin{echo 'Hello world' > /dev/pts/5}
 
 ในการใช้งานจริงแล้ว, ลินุกซ์จะมีคำสั่ง \cmd{write}\cindex{write}\refcmd{write} เพื่อเขียนส่งข้อความไปหาผู้ใช้ที่ล็อกอินอยู่. ถ้าผู้ใช้นั้นใช้เทอร์มินอลหลายตัวพร้อมๆก็สามารถระบุเทอร์มินอลที่ต้องการส่งข้อความได้ด้วย. ในกรณีที่ไม่ต้องการให้คนอื่นรบกวนเขียนข้อความเข้ามาในเทอร์มินอลก็ให้ใช้คำสั่ง \cmd{mesg}\cindex{mesg}\refcmd{mesg} อนุญาตหรือไม่อนุญาตการส่งข้อมูลผ่านเทอร์มินอล.
 
-\begin{figure}[!htb]
-\scalebox{.6}{\includegraphics{write_1.eps}}
-
-\vspace{10pt}
-\scalebox{.6}{\includegraphics{write_2.eps}}
-\caption{ใช้ \cmd{write} ส่งข้อความระหว่างผู้ใช้ในระบบ.}\label{fig:write}
-\end{figure}
+%%BROKEN%%\begin{figure}[!htb]
+%%BROKEN%%\scalebox{.6}{\includegraphics{write_1.eps}}
+%%BROKEN%%
+%%BROKEN%%\vspace{10pt}
+%%BROKEN%%\scalebox{.6}{\includegraphics{write_2.eps}}
+%%BROKEN%%\caption{ใช้ \cmd{write} ส่งข้อความระหว่างผู้ใช้ในระบบ.}\label{fig:write}
+%%BROKEN%%\end{figure}
 
 ในบางกรณีอาจจะมีความจำเป็นต้องส่งข้อความผ่านเทอร์มินอลหาผู้ใช้ทุกคนในระบบที่ใช้เทอร์มินอลอยู่, ให้ใช้คำสั่ง \cmd{wall}\cindex{wall}\refcmd{wall} ส่งข้อมูลให้ผู้ใช้ที่ใช้เทอร์มินอลทุกตัวในระบบ.
 
@@ -578,9 +578,9 @@ shutdown:*:9797:0:::::
 \end{longtable}
 
 \subsection{แสดงข้อมูล}
-\begin{figure}[!htb]
-\plfigure{.8}{file_display.eps}{คำสั่งที่ใช้แสดงข้อมูลส่วนต่างๆ.}{file_display}
-\end{figure}
+%%BROKEN%%\begin{figure}[!htb]
+%%BROKEN%%\plfigure{.8}{file_display.eps}{คำสั่งที่ใช้แสดงข้อมูลส่วนต่างๆ.}{file_display}
+%%BROKEN%%\end{figure}
 
 จากบทที่ผ่านมามีตัวอย่างการใช้งานคำสั่ง \cmd{cat} มากพอและไม่จำเป็นต้องอธิบายแล้วว่าคำสั่ง \cmd{cat} ใช้ทำอะไร. คำสั่ง \cmd{cat} สามารถใช้แสดงเลขบรรทัดทุกบรรทัดด้วยตัวเลือก \cmd{-n} ซึ่งในแพ็กเกจ textutils ก็มีคำสั่งที่ใช้เลขบรรทัดในไฟล์ด้วยเหมือนกันแต่มีลูกเล่นมากกว่า.
 
@@ -607,20 +607,20 @@ $ \cin{yes | head -n 5 | nl -n rz -b a -w 3} \mycomment{ใช้คำสั่
 
 รูปที่ \ref{fig:fmt} แสดงความแตกต่างระหว่างข้อมูลเท็กซ์ที่ยังไม่ได้จัดย่อหน้ากับข้อมูลที่จัดย่อหน้าแล้วด้วยคำสั่ง \cmd{fmt}.
 
-\begin{figure}[!htb]
-\ifthenelse{\isodd{\pageref{fig:fmt}}}%
-{\parbox{\headwidth}{\center\scalebox{.35}{\includegraphics{fmt_1.eps}~~~~\includegraphics{fmt_2.eps}}\caption{ใช้ \cmd{fmt} จัดรูปแบบข้อมูล.}\label{fig:fmt}}}%
-{\leftskip=\moveback\parbox{\headwidth}{\center\scalebox{.35}{\includegraphics{fmt_1.eps}~~~~\includegraphics{fmt_2.eps}}\caption{ใช้ \cmd{fmt} จัดรูปแบบข้อมูล.}\label{fig:fmt}}}
-\end{figure}
+%%BROKEN%%\begin{figure}[!htb]
+%%BROKEN%%\ifthenelse{\isodd{\pageref{fig:fmt}}}%
+%%BROKEN%%{\parbox{\headwidth}{\center\scalebox{.35}{\includegraphics{fmt_1.eps}~~~~\includegraphics{fmt_2.eps}}\caption{ใช้ \cmd{fmt} จัดรูปแบบข้อมูล.}\label{fig:fmt}}}%
+%%BROKEN%%{\leftskip=\moveback\parbox{\headwidth}{\center\scalebox{.35}{\includegraphics{fmt_1.eps}~~~~\includegraphics{fmt_2.eps}}\caption{ใช้ \cmd{fmt} จัดรูปแบบข้อมูล.}\label{fig:fmt}}}
+%%BROKEN%%\end{figure}
 
 คำสั่ง \cmd{fmt}\cindex{fmt}\refcmd{fmt} จะพยายามตัดเรียงข้อมูลเป็นบรรทัดๆ โดยที่แต่ละบรรทัดมีความยาวไม่เกิน 75 ตัวอักษร. จำนวนอักษรนี้สามารถกำหนดได้ด้วยตัวเลือก \cmd{-w} (width). ถ้าใช้ตัวเลือก \cmd{-u} จะเป็นการลบช่องไฟที่เกินและไม่จำเป็นได้ด้วย. ตัวอย่างเช่น ``a\ \ pencil'' เป็น ``a pencil''. บรรทัดว่างที่อยู่ในข้อมูลนำเข้าจะถือว่าเป็นการเริ่มต้นย่อหน้า. คำสั่ง \cmd{fmt} จะแบ่งบรรทัดที่ยาวเกินจำนวนอักษรที่กำหนดและจะรวมบรรทัดที่สั้นๆให้มีความกว้างไม่เกินที่กำหนด. 
 
 \medskip
 คำสั่ง \cmd{pr}\cindex{pr} ใช้สำหรับจัดเรียงหน้าเพื่อพิมพ์ออกทางเครื่องพิมพ์. การจัดเรียงหน้านี้เป็นการจัดเรียงแบบง่ายๆตามความกว้างของบรรทัด (72 ตัวอักษร) และความยาวของหน้าในหน่วยบรรทัด (66 บรรทัด). นอกจากนี้คำสั่ง \cmd{fmt} จะพิมพ์หัวกระดาษให้ด้วย. 
 
-\begin{figure}[!tb]
-\plfigure{.35}{pr.eps}{ใช้คำสั่ง \cmd{fmt} และ \cmd{pr} จัดหน้ากระดาษแบบง่ายๆ.}{pr}
-\end{figure}
+%%BROKEN%%\begin{figure}[!tb]
+%%BROKEN%%\plfigure{.35}{pr.eps}{ใช้คำสั่ง \cmd{fmt} และ \cmd{pr} จัดหน้ากระดาษแบบง่ายๆ.}{pr}
+%%BROKEN%%\end{figure}
 
 คำสั่งสุดท้ายที่ใช้จัดข้อมูลคือ \cmd{fold}\cindex{fold}. คำสั่ง \cmd{fold} จะตัดบรรทัดที่ยาวๆให้มีความกว้าง (ตัวอักษร) ไม่เกินความกว้างที่กำหนด. คำสั่งนี้จะคล้ายกับคำสั่ง \cmd{fmt} แต่จะไม่มีการรวมบรรทัดที่ติดกัน. การตัดบรรทัดของคำสั่ง \cmd{fold} จะตัดตามจำนวนอักษรไม่ได้ตัดแบ่งบรรทัดตามช่องว่างทำให้ไม่สวยงาม. ถ้าต้องการตัดบรรทัดด้วยช่องว่าง, คือตัดบรรทัดแบ่งตามคำภาษาอังกฤษให้ใช้ตัดเลือก \cmd{-s}.
 
@@ -778,9 +778,9 @@ lp:4
 \subsubsection{ต่อ -- \cmd{paste}}
 cut \& paste ในความหมายของเวิร์ดโปรเซสเซอร์คือการตัดแปะข้อความ. แต่คำสั่ง \cmd{cut} และ \cmd{paste} มีความหมายที่เกี่ยวกับการกระทำเป็นคอลัมน์, เป็นบล็อก. \cmd{cut} เป็นการแสดงคอลัมน์ที่ต้องการ, \cmd{paste} เป็นต่อไฟล์เป็นบล็อกเข้าเป็นไฟล์เดียว.
 
-\begin{figure}[!htb]
-\plfigure{.7}{paste.eps}{การทำงานของคำสั่ง \cmd{paste}.}{paste}
-\end{figure}
+%%BROKEN%%\begin{figure}[!htb]
+%%BROKEN%%\plfigure{.7}{paste.eps}{การทำงานของคำสั่ง \cmd{paste}.}{paste}
+%%BROKEN%%\end{figure}
 
 
 สมมติว่าเรามีไฟล์อยู่สองไฟล์. ไฟล์ที่หนึ่งชื่อ \cmd{address.txt} เป็นไฟล์เท็กซ์ที่เก็บชื่อและที่อยู่แบบ \emph{csv (comma separated values)}.\gindex{csv} %
@@ -1251,9 +1251,9 @@ $ \cin{grep -lri thai .}
 \section{\cmd{sed} และ \cmd{awk}}
 ในหน้าที่ \pageref{sec:tr} ได้แน่นำการแก้ไขไฟล์แบบง่ายๆด้วยคำสั่ง \cmd{tr} ไปแล้ว. การแก้ไขไฟล์เท็กซ์โดยการใช้บรรทัดคำสั่งแบบนี้มีข้อดีที่รวดเร็วและสามารถเขียนเป็นสคริปต์ให้ทำงานอัตโนมัติได้. กล่าวคือเหมาะสำหรับการ\emph{ประมวลผลแบบ batch (batch processing)}\myvocab{b}{batch}{การประมวลผลข้อมูลโดยรวบรวมกระทำตามลำดับที่กำหนดไว้.} และแก้ไขไฟล์หลายๆไฟล์พร้อมๆกัน. สำหรับการทำงานที่ไม่ได้ประโยชน์จากการใช้บรรทัดสั่งตามที่ได้กล่าวไปแล้วก็ให้ใช้บรรณาธิกรณ์ในการแก้ไข.
 
-\begin{figure}[!htb]
-\plfigure{1.0}{awk.eps}{การทำงานของโปรแกรมคำสั่ง \cmd{sed} และ \cmd{awk}.}{awk}
-\end{figure}
+%%BROKEN%%\begin{figure}[!htb]
+%%BROKEN%%\plfigure{1.0}{awk.eps}{การทำงานของโปรแกรมคำสั่ง \cmd{sed} และ \cmd{awk}.}{awk}
+%%BROKEN%%\end{figure}
 
 ในช่วงนี้จะแนะนำโปรแกรมคำสั่ง 2 อย่างที่ใช้ในการเปลี่ยนแปลงแก้ไขไฟล์เท็กซ์ได้ดีกว่าคำสั่ง \cmd{tr}. คำสั่งที่จะแนะนำนี้ได้แก่ \cmd{sed} และ \cmd{awk} ซึ่งเป็นภาษาคอมพิวเตอร์แบบหนึ่งที่ยอมรับว่ามีประโยชน์ในการประมวลผลไฟล์เท็กซ์แล้วมักใช้ร่วมกับเชลล์สคริปต์.
 
@@ -1266,7 +1266,7 @@ sed [-n] [-r] \{-e \textit{script} | -f \textit{script_file}\} [\textit{filename
 \end{MyVerbatim}
 ตัวเลือก \cmd{-e} หมายถึงรับคำสั่ง (\cmdit{script}) ของ \cmd{sed} จากอาร์กิวเมนต์เชลล์. สคริปต์ที่ว่านี้จะมีรูปแบบเป็น \cmd{[address]command} โดยที่ \cmd{address} คือตำแหน่งบรรทัดที่ต้องการประมวลผล, และ \cmd{command} คือคำสั่งของ \cmd{sed} ที่ต้องการกระทำกับข้อมูลบรรทัดนั้น. โดยปรกติจะใช้เครื่องหมาย quote คร่อมสคริปต์เพื่อไม่ให้เชลล์ตีความหมายในกรณีที่มีอักษรพิเศษสำหรับเชลล์. \cmdit{filename} คือไฟล์ที่ต้องการแก้ไขหรือถ้าไม่ระบุก็จะรับข้อมูลจาก stdin. ตัวเลือก \cmd{-r}\mymemo{\cmd{-r} ย่อมาจาก \cmd{--regexp-extended}} ใช้สำหรับระบุ RE แบบเสริม.
 
-คำสั่งแรกที่จะแนะนำคือ \cmd{p} ซึ่งจะแสดงข้อมูลบรรทัดต่อบรรทัด.\cmd{สมมติว่าไฟล์ที่ต้องการประมวลผลคือ \cmd{simple.html} ซึ่งเป็นไฟล์ HTML แบบง่ายๆ.}
+คำสั่งแรกที่จะแนะนำคือ \cmd{p} ซึ่งจะแสดงข้อมูลบรรทัดต่อบรรทัด. สมมติว่าไฟล์ที่ต้องการประมวลผลคือ \cmd{simple.html} ซึ่งเป็นไฟล์ HTML แบบง่ายๆ.
 \begin{MyExample}[ใช้ \cmd{sed}]
 \begin{MyEx}
 $ \cin{cat -n simple.html}
@@ -1575,9 +1575,9 @@ $ \cin{du -s /usr/* | head | awk '/X11/ \{print $0\}'}
 จากตัวอย่าง, \cmd{awk} รับข้อมูลจาก stdin ซึ่งเป็นผลลัพธ์ของคำสั่ง \cmd{du} ซึ่งแสดงการใช้พื้นที่ของไดเรกทอรีต่างๆใต้ \cmd{/usr} และส่งต่อให้คำสั่ง \cmd{head} เพื่อลดจำนวนผลลัพธ์ให้เหลือ 10 บรรทัด\mymemo{\cmd{head} จะแสดงข้อมูล 10 บรรทัดแรกโดยปริยายถ้าไม่ระบุจำนวนบรรทัดที่ต้องการ.}. จากนั้นใช้ \cmd{awk} แสดงบรรทัดที่มีคำว่า \cmd{X11}. 
 
 \subsubsection{แถวและคอลัมน์}
-\begin{figure}[!htb]
-\plfigure{.8}{record_field.eps}{ความสัมพันธ์ระหว่างแถวและคอลัมน์ในไฟล์.}{record_field}
-\end{figure}
+%%BROKEN%%\begin{figure}[!htb]
+%%BROKEN%%\plfigure{.8}{record_field.eps}{ความสัมพันธ์ระหว่างแถวและคอลัมน์ในไฟล์.}{record_field}
+%%BROKEN%%\end{figure}
 
 \cmd{awk} จะรับข้อมูลบรรทัดต่อบรรทัดเหมือนกับคำสั่ง \cmd{sed}. \cmd{awk} จะเรียกข้อมูลที่มีหน่วยเป็นบรรทัดว่าแถว (row) หรือ \emph{record}\gindex{record}. นอกจากนั้นยังแยกข้อมูลในบรรทัดต่อไปอีกเป็นคอลัมน์ (column) หรือ \emph{field}\gindex{field}. เราสามารถมองไฟล์ให้เป็นตารางข้อมูลแถวและคอลัมน์, และในคำสั่ง \cmd{awk} จะมีตัวแปรแทนสำหรับข้อมูลในแถวและคอลัมน์ที่ต้องการ. ข้อมูลคอลัมน์มีการแบ่งเป็นช่วงๆแยกด้วยเครื่องหมายที่กำหนดเช่น ช่องว่าง, colon เป็นต้น. จากตัวอย่างที่ \ref{ex:basic_awk}, อักษรที่แบ่งข้อมูลเป็น field ได้แก่ช่องว่าง. ตัวแปรที่ใช้แทนข้อมลแถวได้แก่ \cmd{\$0} ซึ่งจะหมายถึงบรรทัดทั้งบรรทัด. ส่วนตัวแปรที่ใช้แทนข้อมูลคอลัมน์แต่ละคอลัมน์ได้แก่ \cmd{\$1}, \cmd{\$2} ไปเรื่อยๆ. 
 
@@ -2482,9 +2482,9 @@ $ \cin{./fibonacci_function.sh 20}
 
 การแสดงหน้าต่าง \cmd{xlogo} จะใช้สีฉากหน้าและฉากหลังด้วยการสุ่มเลือกสี, และสุ่มเลือกตำแหน่งที่แสดงให้อยู่ในบริเวณหน้าจอ. รูปที่ \ref{fig:xlogo_sh} แสดงหน้าจอการทำงานของเชลล์สคริปต์.
 
-\begin{figure}[!htb]
-\plfigure{.35}{xlogo_sh.eps}{ผลของเชลล์สคริปต์ในตัวอย่างที่ \ref{ex:xlogo_sh}.}{xlogo_sh}
-\end{figure}
+%%BROKEN%%\begin{figure}[!htb]
+%%BROKEN%%\plfigure{.35}{xlogo_sh.eps}{ผลของเชลล์สคริปต์ในตัวอย่างที่ \ref{ex:xlogo_sh}.}{xlogo_sh}
+%%BROKEN%%\end{figure}
 
 ในเชลล์สคริปต์ที่จะอธิบายต่อไปนี้มีการเรียกใช้โปรแกรมที่ต้องแนะนำก่อนได้แก่โปรแกรม \cmd{showrgb}, \cmd{xdpyinfo}, \cmd{xlogo}, \cmd{pgrep} และ \cmd{kill}. 
 
@@ -2541,9 +2541,9 @@ screen #0:
 \item \cmd{-geometry +\textit{x}+\textit{y}} ระบุตำแหน่งหน้าต่างพิกัด x และ y ในหน่วยพิกเซลโดยที่จุด (0, 0) อยู่ที่มุมซ้ายบนของหน้าจอ. 
 \end{itemize}
 
-\begin{figure}[!htb]
-\plfigure{.40}{x_coordinate.eps}{ระบบพิกัดใน X วินโดว์.}{x_coordinate}
-\end{figure}
+%%BROKEN%%\begin{figure}[!htb]
+%%BROKEN%%\plfigure{.40}{x_coordinate.eps}{ระบบพิกัดใน X วินโดว์.}{x_coordinate}
+%%BROKEN%%\end{figure}
 
 
 \medskip
