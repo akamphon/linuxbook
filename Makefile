@@ -1,33 +1,35 @@
-dvi:
-	latex --translate-file=cp8bit.tcx linux > /dev/null
-	./wordcut.sh >& /dev/null
-	latex --translate-file=cp8bit.tcx linux > /dev/null
-all:
-	latex --translate-file=cp8bit.tcx linux
-	./wordcut.sh
-	latex --translate-file=cp8bit.tcx linux
-	./makeindex -s book.ist -T general
-	./makeindex -s book.ist -T command
-	./makeindex -s nomencl.ist linux.glo -o linux.gls
-	latex --translate-file=cp8bit.tcx linux
-	latex --translate-file=cp8bit.tcx linux
+THAI_SOURCES = \
+	introduction.ltx	\
+	basic.ltx	\
+	file.ltx	\
+	coreutils.ltx	\
+	applications.ltx	\
+	command.ltx	\
+	etc.ltx	\
+	debian.ltx	\
+	$(NULL)
+
+THAI_TEXS = $(THAI_SOURCES:.ltx=.tex)
+
+all: linux.pdf
+
+%.tex: %.ltx
+	swath -u u,u -f latex < $< > $@
+
+linux.pdf: linux.tex mymacro.tex ascii_table.tex $(THAI_TEXS)
+	pdflatex linux
+	makeindex -s book.ist -T general
+	makeindex -s book.ist -T command
+	makeindex -s nomencl.ist linux.glo -o linux.gls
+	pdflatex linux
+
+clean:
+	rm -f *.aux *.glo *.idx *.lof *.log *.lot *.out *.thm *.toc
+	rm -f $(THAI_TEXS)
+
 index:
-	./makeindex -T -s book.ist general
-	./makeindex -T -s book.ist command
+	makeindex -T -s book.ist general
+	makeindex -T -s book.ist command
 
 glossary:
-	./makeindex -T -s nomencl.ist linux.glo -o linux.gls
-
-bib:
-	bibtex linux
-
-linux.pdf: linux.dvi
-	dvips -Ppdf -Poutline -Pcmz -t a4 -o linux.ps linux.dvi
-	ps2pdf -dPDFSETTINGS=/printer -dEncodeColorImages=false linux.ps
-#	rm -f linux.ps
-clean: 
-	rm -f *.wbr *~
-	LANG=th_TH latex --translate-file=cp8bit.tcx linux > /dev/null
-#	for i in *.th;do  w=`echo $${i} | sed -e s/\.th/\.wbr/`; cttex -W < $${i} > $${w} 2> /dev/null ; done
-	./wordcut.sh
-	LANG=th_TH latex --translate-file=cp8bit.tcx linux > /dev/null
+	makeindex -T -s nomencl.ist linux.glo -o linux.gls
