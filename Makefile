@@ -4,6 +4,7 @@ THAI_SOURCES = \
 	file.ltx	\
 	coreutils.ltx	\
 	applications.ltx	\
+	biblio.ltx	\
 	command.ltx	\
 	etc.ltx	\
 	debian.ltx	\
